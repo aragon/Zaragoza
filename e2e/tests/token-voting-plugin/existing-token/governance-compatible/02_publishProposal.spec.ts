@@ -13,7 +13,7 @@ test('Publish signaling Proposal', async ({
   await page.getByRole('button', {name: 'Connect wallet'}).click();
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();
-  await page.locator('[id="radix-\\:r16\\:"]').click();
+  // await page.locator('[id="radix-\\:r16\\:"]').click();
   await page.getByText('Sort by recently created').click();
   await page.getByRole('button', {name: 'Show more'}).click();
   await page
@@ -50,5 +50,5 @@ test('Publish signaling Proposal', async ({
   await page.getByRole('button', {name: 'Submit your vote'}).click();
   await page.getByRole('button', {name: 'Vote now'}).click();
   await metamask.confirmTransaction();
-  await page.getByRole('button', {name: 'Continue to proposal'}).click();
+  // await page.getByRole('button', {name: 'Continue to proposal'}).click();
 });

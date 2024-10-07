@@ -27,7 +27,7 @@ test('Add DAO member Token Wrap', async ({
     .getByTestId('navLinks')
     .getByRole('button', {name: 'Members'})
     .click();
-  await page.getByRole('button', {name: 'Join the DAO'}).click();
+  await page.getByRole('button', {name: 'Wrap / unwrap tokens'}).click();
   await page.getByPlaceholder('0').click();
   await page.getByPlaceholder('0').fill('0.01');
   await page.getByRole('button', {name: 'Approve tokens'}).click();
@@ -35,7 +35,7 @@ test('Add DAO member Token Wrap', async ({
   await page.getByRole('button', {name: 'Switch to Ethereum Sepolia'}).click();
   await metamask.approveSwitchNetwork();
   await page.waitForTimeout(1000);
-  await page.getByRole('button', {name: 'Join the DAO'}).click();
+  await page.getByRole('button', {name: 'Wrap / unwrap tokens'}).click();
   await page.getByPlaceholder('0').click();
   await page.getByPlaceholder('0').fill('0.01');
   await page.getByRole('button', {name: 'Approve tokens'}).click();

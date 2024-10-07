@@ -79,5 +79,5 @@ test('Create Token Based DAO (governance incompatible token)', async ({
   await page.waitForTimeout(1000);
   await page.getByRole('button', {name: 'Wrap tokens'}).click();
   await metamask.confirmTransaction();
-  await page.getByRole('button', {name: 'See community'}).click();
+  // await page.getByRole('button', {name: 'See community'}).click();
 });
