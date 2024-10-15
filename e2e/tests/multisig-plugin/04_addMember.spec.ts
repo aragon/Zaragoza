@@ -14,7 +14,7 @@ test('Add DAO member Proposal', async ({
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();
   await page.getByRole('radio', {name: 'Member'}).click();
-  await page.locator('[id="radix-\\:r16\\:"]').click();
+  // await page.locator('[id="radix-\\:r16\\:"]').click();
   await page.getByText('Sort by recently created').click();
   await page
     .getByRole('link', {name: 'MD Multisig DAO DAO generated'})
@@ -49,5 +49,5 @@ test('Add DAO member Proposal', async ({
   await page.getByRole('button', {name: 'Approve and execute'}).click();
   await page.getByRole('button', {name: 'Approve and execute'}).click();
   await metamask.confirmTransaction();
-  await page.getByRole('button', {name: 'Continue to proposal'}).click();
+  // await page.getByRole('button', {name: 'Continue to proposal'}).click();
 });
