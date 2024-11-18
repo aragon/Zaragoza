@@ -10,10 +10,10 @@ test('Create Token Based DAO (governance incompatible token)', async ({
 }) => {
   await page.goto(`${LOCALHOST_URL}/`);
   await page.getByRole('button', {name: 'Accept all'}).click();
-  await page.getByRole('button', {name: 'Connect wallet'}).click();
+  await page.getByRole('button', {name: 'Connect'}).click();
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();
-  await page.getByRole('button', {name: 'Create a DAO'}).click();
+  await page.getByRole('link', {name: 'Create a DAO'}).nth(1).click();
   await page.getByRole('button', {name: 'Build your DAO'}).click();
   await page.getByRole('radio', {name: 'Testnet'}).click();
   await page.getByText('Ethereum Sepolia').click();

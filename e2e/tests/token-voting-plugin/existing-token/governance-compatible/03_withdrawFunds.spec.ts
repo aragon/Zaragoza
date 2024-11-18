@@ -12,7 +12,7 @@ test('Withdraw DAO funds proposal', async ({
     `${LOCALHOST_URL}/#/daos/sepolia/0xf4795943aa64031d6d32b6e76899dbb9bced91b6/dashboard`
   );
   await page.getByRole('button', {name: 'Accept all'}).click();
-  await page.getByRole('button', {name: 'Connect wallet'}).click();
+  await page.getByRole('button', {name: 'Connect'}).click();
   await page.getByRole('button', {name: 'Connect wallet now'}).click();
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();

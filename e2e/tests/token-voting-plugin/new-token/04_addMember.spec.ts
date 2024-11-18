@@ -10,7 +10,7 @@ test('Add DAO member Proposal', async ({
 }) => {
   await page.goto(`${LOCALHOST_URL}/`);
   await page.getByRole('button', {name: 'Accept all'}).click();
-  await page.getByRole('button', {name: 'Connect wallet'}).click();
+  await page.getByRole('button', {name: 'Connect'}).click();
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();
   await page.getByRole('radio', {name: 'Member'}).click();
