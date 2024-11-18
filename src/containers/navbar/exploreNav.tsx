@@ -1,22 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {ButtonWallet, useScreen} from '@aragon/ods-old';
 import {Button, IconType} from '@aragon/ods';
 import {useTranslation} from 'react-i18next';
-
 import {useWallet} from 'hooks/useWallet';
-import Logo from 'assets/images/logo.svg';
 import {useGlobalModalContext} from 'context/globalModals';
 import {Container, GridLayout} from 'components/layout';
 import {FEEDBACK_FORM} from 'utils/constants';
+import classNames from 'classnames';
+import {Logotype} from 'components/logos/logotype';
+import {Logo} from 'components/logos/logo';
 
 const ExploreNav: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const {t} = useTranslation();
   const {address, ensName, ensAvatarUrl, isConnected, methods} = useWallet();
   const {open} = useGlobalModalContext();
-  const {isDesktop} = useScreen();
-
-  const path = t('logo.linkURL');
+  const {isDesktop, isMobile} = useScreen();
 
   const handleFeedbackButtonClick = () => {
     window.open(FEEDBACK_FORM, '_blank');
@@ -29,27 +29,47 @@ const ExploreNav: React.FC = () => {
     }
 
     methods.selectWallet().catch((err: Error) => {
-      // To be implemented: maybe add an error message when
-      // the error is different from closing the window
       console.error(err);
     });
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = 276;
+      if (window.scrollY > threshold) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const menuClassNames = classNames('py-4 xl:py-6', {
+    'bg-gradient-to-b from-primary-400 to-transparent': !isScrolled,
+    'bg-primary-400': isScrolled,
+  });
+
   return (
     <Container data-testid="navbar">
-      <Menu>
-        <GridLayout>
+      <nav className={menuClassNames}>
+        <GridLayout className="grid grid-cols-[auto,1fr] items-center">
           <LeftContent>
-            <LogoContainer
-              src={Logo}
-              onClick={() => window.open(path, '_blank')}
-            />
+            <LogoContainer href="/">
+              {isMobile ? <Logo /> : <Logotype />}
+            </LogoContainer>
           </LeftContent>
           <RightContent>
             <ActionsWrapper>
               {isDesktop ? (
                 <Button
-                  size="lg"
                   variant="tertiary"
                   iconRight={IconType.FEEDBACK}
                   onClick={handleFeedbackButtonClick}
@@ -58,7 +78,6 @@ const ExploreNav: React.FC = () => {
                 </Button>
               ) : (
                 <Button
-                  size="lg"
                   variant="tertiary"
                   iconLeft={IconType.FEEDBACK}
                   onClick={handleFeedbackButtonClick}
@@ -77,23 +96,17 @@ const ExploreNav: React.FC = () => {
             </ActionsWrapper>
           </RightContent>
         </GridLayout>
-      </Menu>
+      </nav>
     </Container>
   );
 };
 
-const Menu = styled.nav.attrs({
-  className: 'py-4 xl:py-6',
-})`
-  background: linear-gradient(180deg, #3164fa 0%, rgba(49, 100, 250, 0) 100%);
-`;
-
 const LeftContent = styled.div.attrs({
-  className: 'col-span-3 md:col-span-2 flex items-center',
+  className: 'col-span-2 flex items-center',
 })``;
 
-const LogoContainer = styled.img.attrs({
-  className: 'h-8 cursor-pointer',
+const LogoContainer = styled.a.attrs({
+  className: 'h-10 text-neutral-0',
 })``;
 
 const RightContent = styled.div.attrs({

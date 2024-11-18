@@ -1,0 +1,65 @@
+[
+    {
+    "name": "Lido",
+    "description": "The Lido DAO governs key parameters of Ethereum's largest liquid staking protocol using the voting power of LDO.",
+    "logo": "https://pbs.twimg.com/profile_images/1721880644345622528/G2czctJJ_400x400.jpg",
+    "network": "ethereum",
+    "daoAddress": "0x0000000000000000000000000000000000000000",
+    "overrideUrl": "https://vote.lido.fi/"
+  },
+  {
+    "name": "Polygon",
+    "description": "The Polygon Governance Hub enables community-driven decision-making for the Polygon aggregated blockchain network.",
+    "logo": "https://aragon-1.mypinata.cloud/ipfs/QmXj8BtBp5wddCXcDQEAdBgkNtEjEHdHfHGsz4MnUBzxHU",
+    "network": "ethereum",
+    "daoAddress": "0x0000000000000000000000000000000000000000",
+    "overrideUrl": "https://governance.polygon.technology/"
+  },
+  {
+    "name": "Puffer DAO",
+    "description": "Puffer DAO enables the community and its ecosystem participants to govern the Puffer protocol.",
+    "logo": "https://pbs.twimg.com/profile_images/1816010238262444033/ccrQWNFq_400x400.jpg",
+    "network": "ethereum",
+    "daoAddress": "0x5dea8e499b05de8f86e7521f039770268055b23f",
+    "overrideUrl": "https://vote.puffer.fi/"
+  },
+  {
+    "name": "Curve Finance",
+    "description": "Curve.fi DAO lets CRV holders lock their tokens to make onchain-enforceable changes to the Curve protocol.",
+    "logo": "https://pbs.twimg.com/profile_images/1220560374346461185/W1sQNVWo_400x400.jpg",
+    "network": "ethereum",
+    "daoAddress": "0x0000000000000000000000000000000000000000",
+    "overrideUrl": "https://dao.curve.fi/dao"
+  },
+  {
+    "name": "Mode",
+    "description": "The Mode Governance Hub enables the community to participate in scaling DeFi to billions of users.",
+    "logo": "https://pbs.twimg.com/profile_images/1688569679877390338/IYXD4bdy_400x400.jpg",
+    "network": "mode",
+    "daoAddress": "0xcf2c9a22b58f125f929cb8e8b29a6d7e2c4287ff",
+    "overrideUrl": "https://gov.mode.network/"
+  },
+  {
+    "name": "Steakhouse Financial",
+    "description": "Steakhouse's MetaMorpho vaults utilize Aragon Guardian DAOs to provide transparent and trustless community oversight.",
+    "logo": "https://pbs.twimg.com/profile_images/1562326980820967424/f07396YH_400x400.jpg",
+    "network": "ethereum",
+    "daoAddress": "0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
+    "overrideUrl": "https://app.morpho.org/vault?vault=0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB"
+  },
+  {
+    "name": "Openmesh",
+    "description": "Openmesh's OpenR&D is open-source platform designed to empower decentralized teams to collaborate seamlessly.",
+    "logo": "https://pbs.twimg.com/profile_images/1796530693314424833/PfW0xFlD_400x400.jpg",
+    "network": "polygon",
+    "daoAddress": "0x053a28A9Ffd76253379759df5e5b41466cD13804",
+    "overrideUrl": "https://ovc.openmesh.network/plugins/token-voting/"
+  },
+  {
+    "name": "Aragon X",
+    "description": "The Aragon X team is dogfooding their latest governance stack - the most modular governance stack on Ethereum.",
+    "logo": "https://pbs.twimg.com/profile_images/1643537212095733761/zMvurGOa_400x400.jpg",
+    "network": "ethereum",
+    "daoAddress": "0xdafbd7d63cee88d73a51592b42f27f7fd6ab7722"
+  }
+]
