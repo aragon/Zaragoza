@@ -14,7 +14,12 @@ test('Add DAO member Proposal', async ({
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();
   await page.getByRole('radio', {name: 'Member'}).click();
-  // await page.locator('[id="radix-\\:r16\\:"]').click();
+  await page
+    .locator('main')
+    .filter({hasText: 'FeaturedAll DAOs'})
+    .getByRole('button')
+    .nth(1)
+    .click();
   await page.getByText('Sort by recently created').click();
   await page
     .getByRole('link', {name: 'MD Multisig DAO DAO generated'})
