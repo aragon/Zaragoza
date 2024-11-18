@@ -13,6 +13,7 @@ test('Publish signaling Proposal', async ({
   await page.getByRole('button', {name: 'Connect'}).click();
   await page.getByRole('button', {name: 'MetaMask MetaMask'}).nth(0).click();
   await metamask.connectToDapp();
+  await page.getByRole('radio', {name: 'All DAOs'}).click();
   await page
     .locator('main')
     .filter({hasText: 'FeaturedAll DAOs'})
